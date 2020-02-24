@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+
+    <script type="text/javascript" src="../../plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+</head>
+<body>
+
+<form>
+    <table>
+        <tr><td>账号： </td>
+            <td><input id="accountInput" type="text"></td>
+        </tr>
+        <tr>
+            <td>密码： </td>
+            <td><input id="psInput" type="password"></td>
+        </tr>
+        <tr>
+            <td>有效期： </td>
+            <td id="timeRadios">
+                <input type="radio" name="timeout" value="0" checked> 每次都需重新登陆 <br/>
+                <input type="radio" name="timeout" value="1"> 关闭浏览器即失效 <br/>
+                <input type="radio" name="timeout" value="2"> 30天内有效<br/>
+                <input type="radio" name="timeout" value="3"> 永久有效<br/>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" value=" 登  录 " class="button" onclick="doLogin()"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
