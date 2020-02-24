@@ -18,7 +18,7 @@ import java.util.Map;
 public class CookieController {
 
     /***
-     * 测试设置cookie有效期
+     * 测试设置cookie有效期 test
      */
     @RequestMapping(value = "/cookieAge", method = RequestMethod.POST)
     @ResponseBody
