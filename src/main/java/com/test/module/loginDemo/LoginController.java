@@ -89,9 +89,13 @@ public class LoginController {
             // 新建Cookie
             Cookie accountCookie = new Cookie("account", account);
             accountCookie.setMaxAge(timeout); // 设置有效期
+            accountCookie.setPath("/sbs"); // 设置路径，如果不设置，默认为当前请求路径 /sbs/loginDemo
+//            accountCookie.setHttpOnly(true); // 设为true后，只能通过http访问，不能通过document.cookie获取设定为httponly的键值,防止xss读取cookie
             // 新建Cookie
             Cookie ssidCookie = new Cookie("ssid", ssid);
             ssidCookie.setMaxAge(timeout); // 设置有效期
+            ssidCookie.setPath("/sbs"); // 设置路径，如果不设置，默认为当前请求路径 /sbs/loginDemo
+//            ssidCookie.setHttpOnly(true); // 设为true后，只能通过http访问，不能通过document.cookie获取设定为httponly的键值,防止xss读取cookie
             // 输出到客户端
             response.addCookie(accountCookie);
             response.addCookie(ssidCookie);
@@ -123,9 +127,11 @@ public class LoginController {
             // cookie account
             Cookie accountCookie = new Cookie("account", "");
             accountCookie.setMaxAge(0); // 设置有效期为0，删除
+            accountCookie.setPath("/sbs");
             // cookie ssid
             Cookie ssidCookie = new Cookie("ssid", "");
             ssidCookie.setMaxAge(0); // 设置有效期为0，删除
+            ssidCookie.setPath("/sbs");
             // 输出到客户端
             response.addCookie(accountCookie);
             response.addCookie(ssidCookie);
