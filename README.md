@@ -12,3 +12,6 @@ web页面：webapp/module/login/* , webapp/module/main/*
 ## Session实现登陆保持样例路径
 Controller：com/test/loginDemo/SloginController <br>
 web页面：webapp/module/sLogin/* , webapp/module/sMain/*
+
+## js操作cookie样例
+web页面：webapp/module/main/main.js
