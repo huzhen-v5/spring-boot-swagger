@@ -101,7 +101,6 @@ public class LoginController {
 
             retMap.put("state", 0);
             retMap.put("message", "账号密码登陆成功");
-            return retMap;
 
         }catch(Exception e) {
             e.printStackTrace();
