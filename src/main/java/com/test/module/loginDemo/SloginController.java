@@ -1,6 +1,7 @@
 package com.test.module.loginDemo;
 
 import com.test.common.PJCommon;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,10 @@ import java.util.Map;
 @Controller
 @RequestMapping("/sLoginDemo")
 public class SloginController {
+
+    @Value("${server.session.cookie.max-age}")
+    private String cookieAge;
+
     /***
      * 测试登录
      * 这里假设用户（userName=admin,password=1111）
@@ -61,7 +66,13 @@ public class SloginController {
             // 设置Session维持时间，单位是秒（0或者负数表示session永远不超时）
             // spring boot 可以在配置文件中配置默认的session超时时间
             // 通过以下代码设置session超时时间，优先级更高
-            session.setMaxInactiveInterval(10);
+            session.setMaxInactiveInterval(1000);
+
+            // 如果浏览器不支持cookie，该方法生成的newurl字符串末尾会自动加上";jsessionid=xxxxxxxxxxxxx"
+//            String newUrl = response.encodeURL("demo/url");
+
+            // 将sessonid返回给前端
+            retMap.put("sessionId", session.getId());
 
             retMap.put("state", 0);
             retMap.put("person", personInfo);
