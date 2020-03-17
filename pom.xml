@@ -30,6 +30,15 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- 引入本地的jar包 -->
+		<dependency>
+			<groupId>asiainfo</groupId>
+			<artifactId>bss.portalcommon</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/fastjson-1.2.58.jar</systemPath>
+		</dependency>
+
 		<!-- Spring Boot Web 依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
