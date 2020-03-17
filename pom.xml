@@ -22,6 +22,26 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
+
+	<!--
+       - maven proxy, 本地仓库，替代 maven.apache.org 网站 jar 列表，用户下载时，首先寻找该站点
+       - 如资源找到，则下载。否则才去 jar 列表网站。对多人团队，可节省下载速度和个人存储空间。
+       - 可以使用Nexus3 私有仓库搭建
+   -->
+	<!--<repositories>-->
+		<!--<repository>-->
+			<!--<id>thirdparty</id>-->
+			<!--<name>3rd party</name>-->
+			<!--<url>http://192.168.1.108:8080/nexus/content/repositories/thirdparty/</url>-->
+			<!--<releases>-->
+				<!--<enabled>true</enabled>-->
+			<!--</releases>-->
+			<!--<snapshots>-->
+				<!--<enabled>false</enabled>-->
+			<!--</snapshots>-->
+		<!--</repository>-->
+	<!--</repositories>-->
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -32,9 +52,9 @@
 
 		<!-- 引入本地的jar包 -->
 		<dependency>
-			<groupId>asiainfo</groupId>
-			<artifactId>bss.portalcommon</artifactId>
-			<version>1.0</version>
+			<groupId>asia</groupId><!--可随意-->
+			<artifactId>com.asia</artifactId><!--可随意-->
+			<version>1.0</version><!--对应jar相应版本（不知道可随意）-->
 			<scope>system</scope>
 			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/fastjson-1.2.58.jar</systemPath>
 		</dependency>
